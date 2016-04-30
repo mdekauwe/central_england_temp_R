@@ -20,7 +20,7 @@ cet <- cet[-nrow(cet),]
 # Last column is the annual value
 year <- as.numeric(rownames(cet))
 nvals = length(cet_annual$year)
-years <- seq(min(cet_annual$year), max(cet_annual$year), length=nvals)
+year <- seq(min(cet_annual$year), max(cet_annual$year), length=nvals)
 cet_year <- data.frame(temp=cet[,ncol(cet)], year=year)
 
 # Drop year from monthly data
@@ -29,9 +29,8 @@ cet_month <- cet[,-ncol(cet)]
 # Reorder the monthly data
 cet_month <- stack(cet_month)[,2:1]
 names(cet_month) <- c("month","temp")
-cet_month <- transform(cet_month, year=(year<-rep(years, times=12)),
-                 num_months=rep(1:12, each=length(years)))
-cet_month <- cet_month[with(cet_month, order(year, month)), ]
+years <- rep(year, times=12)
+cet_month["year"] <- years
 
 golden_ratio <- 1.0 / 1.6180339887
 ax1 <- ggplot(cet_year, aes(year, temp)) +
