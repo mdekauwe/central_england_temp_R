@@ -1,0 +1,32 @@
+
+R version 3.2.4 (2016-03-10) -- "Very Secure Dishes"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> #!/usr/bin/Rscript
+> 
+> url <- "http://www.metoffice.gov.uk/hadobs/hadcet/cetml1659on.dat"
+> download.file(url, destfile="CET_data.txt", method="curl")
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 32850  100 32850    0     0   156k      0 --:--:-- --:--:-- --:--:--  501k
+> 
+> proc.time()
+   user  system elapsed 
+  0.190   0.035   0.434 
