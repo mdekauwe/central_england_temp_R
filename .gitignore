@@ -40,7 +40,8 @@ var/
 *.shx
 *.dbf
 *.prj
-
+*.RData
+*.Rout
 
 .DS_Store
 
