@@ -12,10 +12,10 @@ cet <- cet[-nrow(cet),]
 
 # Last column is the annual value
 year <- as.numeric(rownames(cet))
-df_annual <- data.frame(temp=cet[,ncol(cet)], year=year)
+cet_annual <- data.frame(temp=cet[,ncol(cet)], year=year)
 
 golden_ratio <- 1.0 / 1.6180339887
-ggplot(df_annual, aes(year, temp)) +
+ggplot(cet_annual, aes(year, temp)) +
   geom_point(size=0.8) +
   xlab("Year") +
   ylab(expression(MAT~(~degree~C))) +
@@ -26,4 +26,4 @@ ggplot(df_annual, aes(year, temp)) +
        panel.grid.minor=element_blank())
 
 # Drop year from monthly data
-#cet <- cet[,-ncol(cet)]
+cet_monthly <- cet[,-ncol(cet)]
