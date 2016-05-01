@@ -42,6 +42,7 @@ var/
 *.prj
 *.RData
 *.Rout
+*.pdf
 
 .DS_Store
 

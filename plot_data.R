@@ -32,6 +32,12 @@ names(cet_month) <- c("month","temp")
 years <- rep(year, times=12)
 cet_month["year"] <- years
 
+date <- as.Date(paste(cet_month$year, cet_month$month, "15", sep="-"),
+                format = "%Y-%b-%d")
+cet_month["date"] <- date
+
+cet_month <- cet_month[with(cet_month, order(date)), ]
+
 golden_ratio <- 1.0 / 1.6180339887
 ax1 <- ggplot(cet_year, aes(year, temp)) +
          geom_point(size=0.8) +
